@@ -55,4 +55,16 @@ public class BasePage {
         }
     }
 
+    public void acceptAlert() {
+        wd.switchTo().alert().accept();
+    }
+
+    public void pause(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

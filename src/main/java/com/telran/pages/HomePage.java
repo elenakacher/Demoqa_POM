@@ -18,4 +18,12 @@ public class HomePage extends BasePage{
         return new BookStorePage(wd);
     }
 
+    //@FindBy(xpath = "//h5[text() = 'Alerts, Frame & Windows']")
+    @FindBy(xpath = "//div[@class = 'category-cards']/div[3]")
+    WebElement allertsFrameWindows;
+
+    public SidePanelPage selectAllertsFrameAndWindows() {
+        click(allertsFrameWindows);
+        return new SidePanelPage(wd);
+    }
 }
