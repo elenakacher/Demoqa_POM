@@ -1,10 +1,11 @@
-package com.telran.pages;
+package com.telran.pages.bookstore;
 
+import com.telran.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BookStorePage extends BasePage{
+public class BookStorePage extends BasePage {
     public BookStorePage(WebDriver wd) {
         super(wd);
     }

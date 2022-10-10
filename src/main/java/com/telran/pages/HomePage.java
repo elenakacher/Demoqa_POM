@@ -1,5 +1,6 @@
 package com.telran.pages;
 
+import com.telran.pages.bookstore.BookStorePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,22 @@ public class HomePage extends BasePage{
 
     public SidePanelPage selectAllertsFrameAndWindows() {
         click(allertsFrameWindows);
+        return new SidePanelPage(wd);
+    }
+
+    @FindBy(xpath = "//div[@class = 'category-cards']/div[1]")
+    WebElement elements;
+
+    public SidePanelPage selectElements() {
+        click(elements);
+        return new SidePanelPage(wd);
+    }
+
+    @FindBy(xpath = "//div[@class = 'category-cards']/div[4]")
+    WebElement widgets;
+
+    public SidePanelPage selectWidgets() {
+        clickWithJSExecutor(widgets, 0, 300);
         return new SidePanelPage(wd);
     }
 }
