@@ -2,6 +2,7 @@ package com.telran.pages;
 
 import com.telran.pages.allertsWindows.AlertsPage;
 import com.telran.pages.allertsWindows.BrowserWindowsPage;
+import com.telran.pages.allertsWindows.FramesPage;
 import com.telran.pages.bookstore.ProfilePage;
 import com.telran.pages.elements.ButtonsPage;
 import com.telran.widgets.SelectMenuPage;
@@ -9,12 +10,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SidePanelPage extends BasePage{
+public class SidePanelPage extends BasePage {
     public SidePanelPage(WebDriver wd) {
         super(wd);
     }
 
-    @FindBy(css=".show #item-3")
+    @FindBy(css = ".show #item-3")
     WebElement profileButton;
 
     public ProfilePage selectProfile() {
@@ -22,7 +23,7 @@ public class SidePanelPage extends BasePage{
         return new ProfilePage(wd);
     }
 
-    @FindBy(xpath="//span[. = 'Alerts']")
+    @FindBy(xpath = "//span[. = 'Alerts']")
     WebElement allertsBtn;
 
     public AlertsPage selectAllerts() {
@@ -38,7 +39,7 @@ public class SidePanelPage extends BasePage{
         return new BrowserWindowsPage(wd);
     }
 
-    @FindBy(xpath="//span[. = 'Buttons']")
+    @FindBy(xpath = "//span[. = 'Buttons']")
     WebElement buttonsBtn;
 
     public ButtonsPage selectButtons() {
@@ -46,11 +47,19 @@ public class SidePanelPage extends BasePage{
         return new ButtonsPage(wd);
     }
 
-    @FindBy(xpath="//span[. = 'Select Menu']")
+    @FindBy(xpath = "//span[. = 'Select Menu']")
     WebElement selectMenuBtn;
 
     public SelectMenuPage getSelectMenu() {
         clickWithJSExecutor(selectMenuBtn, 0, 500);
         return new SelectMenuPage(wd);
+    }
+
+    @FindBy(xpath = "//span[.='Frames']")
+    WebElement framesBtn;
+
+    public FramesPage selectFrame() {
+        click(framesBtn);
+        return new FramesPage(wd);
     }
 }

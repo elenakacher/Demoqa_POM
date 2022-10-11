@@ -19,4 +19,15 @@ public class SelectTests extends TestBase {
     public void oldStyleSelectMenuTest() {
         new SelectMenuPage(wd).chooseOldSelectMenu("Yellow");
     }
+
+    @Test
+    public void clickOnMultiSelectDropDownTest(){
+        new SelectMenuPage(wd).clickOnMultiSelectDropDown("Green").deselect()
+                .clickOnMultiSelectDropDown1("Red", "Blue", "Green");
+    }
+
+    @Test
+    public void standardMultiSelectTest() {
+        new SelectMenuPage(wd).clickOnStandardMultiSelect();
+    }
 }
