@@ -2,9 +2,12 @@ package com.telran.pages.allertsWindows;
 
 import com.telran.pages.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -24,26 +27,34 @@ public class FramesPage extends BasePage {
         return this;
     }
 
+    @FindBy (id = "sampleHeading")
+    WebElement textInFrame;
+
     public FramesPage switchToFrameByIndex(int index) {
         wd.switchTo().frame(index);
+        Actions actions = new Actions(wd);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        String textFrame = textInFrame.getText();
+        System.out.println(textFrame);
+        Assert.assertEquals(textFrame, "This is a sample page");
         return this;
     }
 
     @FindBy (id = "frame1")
     WebElement frame1;
 
+    @FindBy(id="frame2")
+    WebElement frame2;
+
     public FramesPage switchToFrameById() {
-        wd.switchTo().frame(frame1);
-        wd.switchTo().defaultContent();
+        wd.switchTo().frame(frame2);
         return this;
     }
 
-    @FindBy(id="sampleHeading")
-    WebElement frameText;
-
     public String getframeText() {
-        wd.switchTo().frame(frame1);
-        return frameText.getText();
+        Actions actions = new Actions(wd);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        return textInFrame.getText();
     }
 
 }

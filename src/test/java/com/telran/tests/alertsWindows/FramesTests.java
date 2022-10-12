@@ -23,12 +23,12 @@ public class FramesTests extends TestBase {
 
     @Test
     public void switchToFrameByIndexTest() {
-        new FramesPage(wd).switchToFrameByIndex(3);
+        new FramesPage(wd).switchToFrameByIndex(2);
     }
 
     @Test
     public void switchToFrameByIdTest() {
         new FramesPage(wd).switchToFrameById();
-        Assert.assertTrue(new FramesPage(wd).getframeText().contains("This is"));
+        Assert.assertTrue(new FramesPage(wd).getframeText().contains("This"));
     }
 }

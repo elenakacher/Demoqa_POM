@@ -1,10 +1,7 @@
 package com.telran.widgets;
 
 import com.telran.pages.BasePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -85,6 +82,53 @@ public class SelectMenuPage extends BasePage {
 
         }
 
+        return this;
+    }
+
+    @FindBy (id = "withOptGroup")
+    WebElement selectValue;
+
+    public SelectMenuPage clickOnSelectValue(String text) {
+        click(selectValue);
+        wd.findElement(By.xpath(String.format("//div[text()='%s']", text))).click();
+        pause(500);
+        click(spase);
+        return this;
+    }
+
+    @FindBy (id = "react-select-2-input")
+    WebElement inputValue;
+
+    public SelectMenuPage clickOnInputValue(String text) {
+        click(inputValue);
+        inputValue.sendKeys(text);
+        inputValue.sendKeys(Keys.ENTER);
+        pause(1000);
+        return this;
+    }
+
+    @FindBy (id = "selectOne")
+    WebElement selectOne;
+
+    public SelectMenuPage clickOnSelectOne(String text) {
+        click(selectOne);
+        wd.findElement(By.xpath(String.format("//div[text()='%s']", text))).click();
+        pause(500);
+        click(spase);
+        return this;
+    }
+
+    //Element inputOne is not clickable at point (349, 31). Поэтому использую selectOne
+    @FindBy (id = "react-select-3-input")
+    WebElement inputOne;
+
+    public SelectMenuPage clickOnInputOne(String text) {
+        click(selectOne);
+        pause(2000);
+        inputOne.sendKeys(text);
+        pause(2000);
+        inputOne.sendKeys(Keys.ENTER);
+        pause(2000);
         return this;
     }
 }

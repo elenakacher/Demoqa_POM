@@ -30,4 +30,25 @@ public class SelectTests extends TestBase {
     public void standardMultiSelectTest() {
         new SelectMenuPage(wd).clickOnStandardMultiSelect();
     }
+
+    @Test
+    public void selectValueTest() {
+        new SelectMenuPage(wd).clickOnSelectValue("Another root option");
+    }
+
+    @Test
+    public void inputValueTest() {
+        new SelectMenuPage(wd).clickOnSelectValue("A root option");
+    }
+
+    @Test
+    public void selectOneTest() {
+        new SelectMenuPage(wd).clickOnSelectOne("Mr.");
+    }
+
+    @Test
+    public void inputOneTest() {
+        new SelectMenuPage(wd).clickOnInputOne("Mrs.");
+    }
+
 }
