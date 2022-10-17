@@ -38,7 +38,7 @@ public class SelectTests extends TestBase {
 
     @Test
     public void inputValueTest() {
-        new SelectMenuPage(wd).clickOnSelectValue("A root option");
+        new SelectMenuPage(wd).clickOnInputValue("A root");
     }
 
     @Test
@@ -48,7 +48,7 @@ public class SelectTests extends TestBase {
 
     @Test
     public void inputOneTest() {
-        new SelectMenuPage(wd).clickOnInputOne("Mrs.");
+        new SelectMenuPage(wd).clickOnInputOne("Mrs");
     }
 
 }

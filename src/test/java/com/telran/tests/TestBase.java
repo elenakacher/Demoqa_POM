@@ -1,6 +1,8 @@
 package com.telran.tests;
 
 import com.telran.pages.BasePage;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -24,7 +26,11 @@ public class TestBase {
     public void init() {
         wd = new ChromeDriver();
         wd.get("https://demoqa.com");
-        wd.manage().window().maximize();
+        //wd.manage().window().maximize();
+        //JavascriptExecutor js = (JavascriptExecutor) wd;
+        //js.executeScript("window.resizeTo(500, 1024)");
+        Dimension dimension = new Dimension(700, 1024);
+        wd.manage().window().setSize(dimension);
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

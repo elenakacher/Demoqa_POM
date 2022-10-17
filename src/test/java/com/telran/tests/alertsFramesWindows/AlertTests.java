@@ -1,4 +1,4 @@
-package com.telran.tests.alertsWindows;
+package com.telran.tests.alertsFramesWindows;
 
 import com.telran.pages.allertsWindows.AlertsPage;
 import com.telran.pages.HomePage;

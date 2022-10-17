@@ -96,12 +96,15 @@ public class SelectMenuPage extends BasePage {
         return this;
     }
 
+    //Element inputVelue is not clickable at point (349, 31). Поэтому использую selectOne
     @FindBy (id = "react-select-2-input")
     WebElement inputValue;
 
     public SelectMenuPage clickOnInputValue(String text) {
-        click(inputValue);
+        click(selectValue);
+        pause(1000);
         inputValue.sendKeys(text);
+        pause(1000);
         inputValue.sendKeys(Keys.ENTER);
         pause(1000);
         return this;

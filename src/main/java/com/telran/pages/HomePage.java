@@ -43,4 +43,12 @@ public class HomePage extends BasePage{
         clickWithJSExecutor(widgets, 0, 300);
         return new SidePanelPage(wd);
     }
+
+    @FindBy(xpath = "//div[@class = 'category-cards']/div[2]")
+    WebElement forms;
+
+    public SidePanelPage selectForms() {
+        click(forms);
+        return new SidePanelPage(wd);
+    }
 }
