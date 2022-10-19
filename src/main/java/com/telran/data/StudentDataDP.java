@@ -56,6 +56,22 @@ public class StudentDataDP {
         return this;
     }
 
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getSubjects() {
+        return subjects;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
     public String getFirstName() {
         return firstName;
     }

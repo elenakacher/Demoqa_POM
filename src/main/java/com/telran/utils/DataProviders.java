@@ -26,7 +26,12 @@ public class DataProviders {
                     .setLastName(split[1])
                     .setEmail(split[2])
                     .setMobile(split[3])
-                    .setAddress(split[4])});
+                    .setDateOfBirth(split[4])
+                    .setSubjects(split[5])
+                    .setAddress(split[6])
+                    .setState(split[7])
+                    .setCity(split[8])});
+
             line = reader.readLine();
         }
         return list.iterator();

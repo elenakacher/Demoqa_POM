@@ -13,8 +13,8 @@ public class StudentData {
     public static final String[] HOBBIES = {"Sports", "Reading"};
     public static final String PICTURE_PATH = "D:/Tools/dr.jpg";
     public static final String CURRENT_ADDRESS = "Karl-Marx-Allee 56, 07747 Jena";
-    public static final String STATE = "NCR";
-    public static final String CITY = "Delhi";
+    public static final String STATE = "Uttar Pradesh";
+    public static final String CITY = "Agra";
 
 }
 

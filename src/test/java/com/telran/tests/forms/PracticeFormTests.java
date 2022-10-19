@@ -19,6 +19,7 @@ public class PracticeFormTests extends TestBase {
         new SidePanelPage(wd).selectPracticeForm();
     }
 
+    @Test
     public void createNewStudentTest() {
        new PracticeFormPage(wd).hideIframes()
                .enterPersonalData(StudentData.FIRST_NAME, StudentData.LAST_NAME,
@@ -42,14 +43,11 @@ public class PracticeFormTests extends TestBase {
     public void createNewStudentTestFromCSV(StudentDataDP studentDataDP) {
         new PracticeFormPage(wd).hideIframes().enterStudentData(studentDataDP).clickSubmitButton();
         new PracticeFormPage(wd).selectGender(StudentData.GENDER)
-                .chooseDate("April", "1989", "12")
-                .addSubject(StudentData.SUBJECTS)
                 .chooseHobby(StudentData.HOBBIES)
                 .upLoadFile(StudentData.PICTURE_PATH)
-                .enterState(StudentData.STATE)
-                .enterCity(StudentData.CITY)
                 .clickSubmitButton();
 
         Assert.assertTrue(new PracticeFormPage(wd).getModalTitle().contains("Thanks for submitting the form"));
+        new PracticeFormPage(wd).closeModal();
     }
 }

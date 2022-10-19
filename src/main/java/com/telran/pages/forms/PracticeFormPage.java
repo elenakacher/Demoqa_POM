@@ -198,12 +198,30 @@ public class PracticeFormPage extends BasePage {
         return this;
     }
 
+    @FindBy(id = "react-select-3-input")
+    WebElement inputState;
+
+    @FindBy(id = "react-select-4-input")
+    WebElement inputCity;
+
     public PracticeFormPage enterStudentData(StudentDataDP studentDataDP) {
         type(firstNameField, studentDataDP.getFirstName());
         type(lastnameField, studentDataDP.getLastName());
         type(userEmailField, studentDataDP.getEmail());
         type(userNumberField, studentDataDP.getMobile());
+        dateOfBirth.click();
+        dateOfBirth.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        dateOfBirth.sendKeys(studentDataDP.getDateOfBirth());
+        dateOfBirth.sendKeys(Keys.ENTER);
+        type(subjectInput, studentDataDP.getSubjects());
         type(currentAddressField, studentDataDP.getAddress());
+        clickWithJSExecutor(selectState, 0, 300);
+        inputState.sendKeys(studentDataDP.getState());
+        inputState.sendKeys(Keys.ENTER);
+        click(selectCity);
+        inputCity.sendKeys(studentDataDP.getCity());
+        inputCity.sendKeys(Keys.ENTER);
         return this;
     }
 }
+
