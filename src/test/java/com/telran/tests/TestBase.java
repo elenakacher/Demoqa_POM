@@ -26,11 +26,11 @@ public class TestBase {
     public void init() {
         wd = new ChromeDriver();
         wd.get("https://demoqa.com");
-        //wd.manage().window().maximize();
+        wd.manage().window().maximize();
         //JavascriptExecutor js = (JavascriptExecutor) wd;
         //js.executeScript("window.resizeTo(500, 1024)");
-        Dimension dimension = new Dimension(700, 1024);
-        wd.manage().window().setSize(dimension);
+        //Dimension dimension = new Dimension(700, 1024);
+        //wd.manage().window().setSize(dimension);
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

@@ -1,12 +1,14 @@
 package com.telran.pages.forms;
 
+import com.telran.data.StudentData;
+import com.telran.data.StudentDataDP;
 import com.telran.pages.BasePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
+import javax.swing.*;
 import java.util.Collection;
 
 public class PracticeFormPage extends BasePage {
@@ -25,10 +27,10 @@ public class PracticeFormPage extends BasePage {
 
     public PracticeFormPage selectGender(String gender) {
         if (gender.equals("Male")) {
-            clickWithJSExecutor(male, 0, 600);
+            click(male);
         } else if (gender.equals("Female")) {
-            clickWithJSExecutor(female, 0, 600);
-        } else clickWithJSExecutor(other, 0, 600);
+            click(female);
+        } else click(other);
         return this;
     }
 
@@ -56,7 +58,7 @@ public class PracticeFormPage extends BasePage {
     public PracticeFormPage addSubject(String[] subjects) {
         for (int i = 0; i < subjects.length; i++) {
             if (subjects[i] != null) {
-                typeWithJSExecutor(subjectInput, subjects[i], 0, 600);
+                type(subjectInput, subjects[i]);
                 subjectInput.sendKeys(Keys.ENTER);
             }
 
@@ -76,13 +78,13 @@ public class PracticeFormPage extends BasePage {
     public PracticeFormPage chooseHobby(String[] hobbies) {
         for (int i = 0; i < hobbies.length; i++) {
             if (hobbies[i].equals("Sports")) {
-                clickWithJSExecutor(sports, 0, 700);
+                click(sports);
             }
             if (hobbies[i].equals("Reading")) {
-                clickWithJSExecutor(reading, 0, 700);
+                click(reading);
             }
             if (hobbies[i].equals("Music")) {
-                clickWithJSExecutor(music, 0, 700);
+                click(music);
             }
         }
             return this;
@@ -113,11 +115,11 @@ public class PracticeFormPage extends BasePage {
 
     public PracticeFormPage enterPersonalData(String firstName, String lastName, String email,
                                   String mobile, String currentAddress) {
-        typeWithJSExecutor(firstNameField, firstName, 0, 700);
-        typeWithJSExecutor(lastnameField, lastName, 0, 700);
-        typeWithJSExecutor(userEmailField, email, 0, 700);
-        typeWithJSExecutor(userNumberField, mobile, 0, 700);
-        typeWithJSExecutor(currentAddressField, currentAddress, 0, 700);
+        type(firstNameField, firstName);
+        type(lastnameField, lastName);
+        type(userEmailField, email);
+        type(userNumberField, mobile);
+        type(currentAddressField, currentAddress);
         return this;
     }
 
@@ -125,9 +127,8 @@ public class PracticeFormPage extends BasePage {
     WebElement selectState;
 
     public PracticeFormPage enterState(String state) {
-        clickWithJSExecutor(selectState, 0, 1000);
-        WebElement element = wd.findElement(By.xpath(String.format("//div[text()='%s']", state)));
-        clickWithJSExecutor(element, 0, 1000);
+        clickWithJSExecutor(selectState, 0, 300);
+        wd.findElement(By.xpath(String.format("//div[text()='%s']", state))).click();
         pause(1000);
         return this;
     }
@@ -136,9 +137,8 @@ public class PracticeFormPage extends BasePage {
     WebElement selectCity;
 
     public PracticeFormPage enterCity(String city) {
-        clickWithJSExecutor(selectCity, 0, 1000);
-        WebElement element = wd.findElement(By.xpath(String.format("//div[text()='%s']", city)));
-        clickWithJSExecutor(element, 0, 1000);
+        clickWithJSExecutor(selectCity, 0, 300);
+        wd.findElement(By.xpath(String.format("//div[text()='%s']", city))).click();
         pause(1000);
         return this;
     }
@@ -147,14 +147,63 @@ public class PracticeFormPage extends BasePage {
     WebElement submit;
 
     public PracticeFormPage clickSubmitButton() {
-        clickWithJSExecutor(submit, 0, 1000);
+        clickWithRectangle(submit, 2, 3);
         return this;
     }
 
-    @FindBy(xpath = "//td[.='Tom Tailor']")
-    WebElement getfirstNameText;
+    @FindBy(id = "example-modal-sizes-title-lg")
+    WebElement modalTitle;
 
-    public String getStudentNameText() {
-        return getfirstNameText.getText();
+    public String getModalTitle() {
+        return modalTitle.getText();
+    }
+
+    public PracticeFormPage hideIframes() {
+        hideAd();
+        hideFooter();
+        return this;
+    }
+
+    @FindBy(id = "closeLargeModal")
+    WebElement closeLargeModal;
+
+    public PracticeFormPage closeModal() {
+        closeBanner();
+        closeLargeModal.click();
+        return this;
+    }
+
+    public void closeBanner() {
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("document.getElementById('close-fixedban').style.display='none'\n");
+    }
+
+    @FindBy (css = ".react-datepicker__month-select")
+    WebElement month;
+
+    @FindBy (css = ".react-datepicker__year-select")
+    WebElement year;
+
+    public PracticeFormPage chooseDate(String m, String y, String d) {
+        click(dateOfBirth);
+        //HTML <select> - обязательное условие
+        Select select = new Select(month);
+        select.selectByVisibleText(m);
+
+        Select select1 = new Select(year);
+        select1.selectByVisibleText(y);
+
+        wd.findElement(By.xpath("//div[@class='react-datepicker__week']//div[.='" + d + "']")).click();
+
+        return this;
+    }
+
+    public PracticeFormPage enterStudentData(StudentDataDP studentDataDP) {
+        type(firstNameField, studentDataDP.getFirstName());
+        type(lastnameField, studentDataDP.getLastName());
+        type(userEmailField, studentDataDP.getEmail());
+        type(userNumberField, studentDataDP.getMobile());
+        type(currentAddressField, studentDataDP.getAddress());
+        return this;
     }
 }

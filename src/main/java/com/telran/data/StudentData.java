@@ -16,8 +16,6 @@ public class StudentData {
     public static final String STATE = "NCR";
     public static final String CITY = "Delhi";
 
-
-
-
-
 }
+
+

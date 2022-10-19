@@ -79,4 +79,23 @@ public class BasePage {
         }
         return screenshot.getAbsolutePath();
     }
+
+    public void hideAd() {
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("document.getElementById('adplus-anchor').style.display='none'");
+    }
+
+    public void hideFooter() {
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("document.querySelector('footer').style.display='none'");
+    }
+
+    public void clickWithRectangle(WebElement element, int i, int j) {
+        Rectangle rectangle = element.getRect();
+        int offsetX = rectangle.getWidth()/i;
+        int offsetY = rectangle.getHeight()/j;
+        Actions actions = new Actions(wd);
+        actions.moveToElement(element).perform();
+        actions.moveByOffset(-offsetX, -offsetY).click().perform();
+    }
 }

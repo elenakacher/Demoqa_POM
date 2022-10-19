@@ -51,4 +51,13 @@ public class HomePage extends BasePage{
         click(forms);
         return new SidePanelPage(wd);
     }
+
+    //@FindBy(xpath = "//div[@class = 'category-cards']/div[5]")
+    @FindBy(xpath = "//h5[. = 'Interactions']")
+    WebElement interactions;
+
+    public SidePanelPage selectInteractions() {
+        click(interactions);
+        return new SidePanelPage(wd);
+    }
 }
