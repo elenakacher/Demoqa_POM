@@ -1,7 +1,5 @@
 package com.telran.data;
 
-import java.util.List;
-
 public class StudentData {
     public static final String FIRST_NAME = "Tom";
     public static final String LAST_NAME = "Tailor";

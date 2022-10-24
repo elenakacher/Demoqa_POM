@@ -114,12 +114,11 @@ public class PracticeFormPage extends BasePage {
     WebElement currentAddressField;
 
     public PracticeFormPage enterPersonalData(String firstName, String lastName, String email,
-                                  String mobile, String currentAddress) {
+                                  String mobile) {
         type(firstNameField, firstName);
         type(lastnameField, lastName);
         type(userEmailField, email);
         type(userNumberField, mobile);
-        type(currentAddressField, currentAddress);
         return this;
     }
 
@@ -213,14 +212,12 @@ public class PracticeFormPage extends BasePage {
         dateOfBirth.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         dateOfBirth.sendKeys(studentDataDP.getDateOfBirth());
         dateOfBirth.sendKeys(Keys.ENTER);
-        type(subjectInput, studentDataDP.getSubjects());
         type(currentAddressField, studentDataDP.getAddress());
-        clickWithJSExecutor(selectState, 0, 300);
-        inputState.sendKeys(studentDataDP.getState());
-        inputState.sendKeys(Keys.ENTER);
-        click(selectCity);
-        inputCity.sendKeys(studentDataDP.getCity());
-        inputCity.sendKeys(Keys.ENTER);
+        return this;
+    }
+
+    public PracticeFormPage enterAddress(String address) {
+        typeWithJSExecutor(currentAddressField, address, 0, 300);
         return this;
     }
 }

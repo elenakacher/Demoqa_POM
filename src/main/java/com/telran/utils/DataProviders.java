@@ -1,13 +1,9 @@
 package com.telran.utils;
 
-import com.telran.data.StudentData;
 import com.telran.data.StudentDataDP;
 import org.testng.annotations.DataProvider;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -27,13 +23,44 @@ public class DataProviders {
                     .setEmail(split[2])
                     .setMobile(split[3])
                     .setDateOfBirth(split[4])
-                    .setSubjects(split[5])
-                    .setAddress(split[6])
-                    .setState(split[7])
-                    .setCity(split[8])});
+                    .setAddress(split[5])});
 
             line = reader.readLine();
         }
         return list.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> usingFile() throws IOException {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(
+                DataProviders.class.getResourceAsStream("/St_demoqa.csv")
+        ));
+        List<Object[]> studentData = new ArrayList<Object[]>();
+        String line = reader.readLine();
+
+        while(line != null) {
+            studentData.add(line.split(","));
+            line = reader.readLine();
+        }
+        reader.close();
+        return studentData.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> usingGuestFile() throws IOException {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(
+                DataProviders.class.getResourceAsStream("/Guest.csv")
+        ));
+        List<Object[]> guestData = new ArrayList<Object[]>();
+        String line = reader.readLine();
+
+        while(line != null) {
+            guestData.add(line.split(","));
+            line = reader.readLine();
+        }
+        reader.close();
+        return guestData.iterator();
     }
 }

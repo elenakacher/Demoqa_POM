@@ -1,4 +1,4 @@
-package com.telran.widgets;
+package com.telran.pages.widgets;
 
 import com.telran.pages.BasePage;
 import org.openqa.selenium.*;

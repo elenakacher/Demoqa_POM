@@ -3,7 +3,7 @@ package com.telran.tests.widgets;
 import com.telran.pages.HomePage;
 import com.telran.pages.SidePanelPage;
 import com.telran.tests.TestBase;
-import com.telran.widgets.SelectMenuPage;
+import com.telran.pages.widgets.SelectMenuPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
