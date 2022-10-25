@@ -5,7 +5,9 @@ import com.telran.pages.allertsWindows.BrowserWindowsPage;
 import com.telran.pages.allertsWindows.FramesPage;
 import com.telran.pages.allertsWindows.NestedFramesPage;
 import com.telran.pages.bookstore.ProfilePage;
+import com.telran.pages.elements.BrockenLinksImagesPage;
 import com.telran.pages.elements.ButtonsPage;
+import com.telran.pages.elements.LinksPage;
 import com.telran.pages.elements.TextBoxPage;
 import com.telran.pages.forms.PracticeFormPage;
 import com.telran.pages.interactions.DragAndDropPage;
@@ -115,5 +117,21 @@ public class SidePanelPage extends BasePage {
     public TextBoxPage selectTextBox() {
         click(textBox);
         return new TextBoxPage(wd);
+    }
+
+    @FindBy(xpath = "//span[.='Broken Links - Images']")
+    WebElement brockenLinksImages;
+
+    public BrockenLinksImagesPage selectBrockenLinksImages() {
+        brockenLinksImages.click();
+        return new BrockenLinksImagesPage(wd);
+    }
+
+    @FindBy(xpath = "//span[.='Links']")
+    WebElement links;
+
+    public LinksPage selectLinks() {
+        links.click();
+        return new LinksPage(wd);
     }
 }
