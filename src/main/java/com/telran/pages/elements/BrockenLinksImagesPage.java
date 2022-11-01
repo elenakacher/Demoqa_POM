@@ -51,12 +51,12 @@ public class BrockenLinksImagesPage extends BasePage {
             httpURLConnection.connect();
             if(httpURLConnection.getResponseCode() >= 400) {
                 System.out.println(linkUrl + " - " + httpURLConnection.getResponseMessage() +
-                        " is a brocken link");
+                        " is a broken link");
             } else {
                 System.out.println(linkUrl + " - " + httpURLConnection.getResponseMessage());
             }
         } catch (Exception e) {
-            System.out.println(linkUrl + " - " + e.getMessage() + " is a brocken link");
+            System.out.println(linkUrl + " - " + e.getMessage() + " is a broken link");
         }
     }
 

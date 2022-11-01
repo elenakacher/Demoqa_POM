@@ -69,7 +69,7 @@ public class BasePage {
         }
     }
 
-    public String takeScreenshot() {
+    public String takeScreenshotLogger() {
         File tmp = ((TakesScreenshot) wd).getScreenshotAs(OutputType.FILE);
         File screenshot = new File("screenshots/screen" + System.currentTimeMillis() + ".png");
         try {
@@ -97,5 +97,16 @@ public class BasePage {
         Actions actions = new Actions(wd);
         actions.moveToElement(element).perform();
         actions.moveByOffset(-offsetX, -offsetY).click().perform();
+    }
+
+    public void takeScreenshotMyListener(String pathToFile) {
+        File tmp = ((TakesScreenshot) wd).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File(pathToFile);
+        try {
+            Files.copy(tmp, screenshot);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

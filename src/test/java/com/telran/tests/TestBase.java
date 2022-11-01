@@ -1,19 +1,16 @@
 package com.telran.tests;
 
 import com.telran.pages.BasePage;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -50,7 +47,7 @@ public class TestBase {
             logger.info("PASSED: test method " + result.getMethod().getMethodName());
         } else {
             logger.error("FAILED: test method " + result.getMethod().getMethodName());
-            new BasePage(wd).takeScreenshot();
+            new BasePage(wd).takeScreenshotLogger();
         }
     }
 

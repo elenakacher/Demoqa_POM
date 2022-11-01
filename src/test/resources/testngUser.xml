@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="User" verbose="1" >
+    <test name="User" >
+        <classes>
+            <class name="com.telran.tests.bookstore.LoginTests" >
+            <parameter name="name" value="kacher" />
+            <parameter name="password" value="K7100596c!" />
+            </class>
+        </classes>
+    </test>
+</suite>

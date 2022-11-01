@@ -22,10 +22,15 @@ public class TextBoxTests extends TestBase {
 
     @Test(dataProvider = "usingGuestFile", dataProviderClass = DataProviders.class)
     public void createNewGuestTest(String FullName, String email, String currentAddress,
-        String permanentAddress) {
+                                   String permanentAddress) {
         new TextBoxPage(wd).createNewGuest(FullName, email, currentAddress, permanentAddress);
         Assert.assertTrue(new TextBoxPage(wd).getGuestDaten().contains("Permananet Address"));
+    }
 
-        }
+    @Test
+    public void keyBoardEventTest() {
+        new TextBoxPage(wd).keyBoardEvent();
+        Assert.assertEquals(new TextBoxPage(wd).getAttribute(), "Karl-Marx-Allee 12, 07747 Jena");
+    }
 }
 

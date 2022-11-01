@@ -8,6 +8,7 @@ import com.telran.pages.bookstore.ProfilePage;
 import com.telran.tests.TestBase;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase {
@@ -22,6 +23,14 @@ public class LoginTests extends TestBase {
     public void loginPositiveTest() {
         new LoginPage(wd).login(UserData.USER_NAME, UserData.USER_PASSWORD);
         new ProfilePage(wd).verifyUserName(UserData.USER_NAME);
+    }
+
+    @Test
+    @Parameters({"name", "password"})
+    public void loginPositiveParametersTest(String name, String password) {
+        new LoginPage(wd).hideAd();
+        new LoginPage(wd).login(name, password);
+        new ProfilePage(wd).verifyUserName(name);
     }
 
     @AfterMethod
