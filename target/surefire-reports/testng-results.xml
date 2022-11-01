@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-01T10:26:21 MEZ" name="User" finished-at="2022-11-01T10:26:35 MEZ" duration-ms="14261">
+    <groups>
+    </groups>
+    <test started-at="2022-11-01T10:26:21 MEZ" name="User" finished-at="2022-11-01T10:26:35 MEZ" duration-ms="14261">
+      <class name="com.telran.tests.bookstore.LoginTests">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:21 MEZ" name="init" finished-at="2022-11-01T10:26:25 MEZ" duration-ms="4164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="startTest(java.lang.reflect.Method)[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:25 MEZ" name="startTest" finished-at="2022-11-01T10:26:25 MEZ" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.telran.tests.bookstore.LoginTests.loginPositiveParametersTest(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method is-config="true" signature="ensurePrecondition()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:25 MEZ" name="ensurePrecondition" finished-at="2022-11-01T10:26:26 MEZ" duration-ms="1114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ensurePrecondition -->
+        <test-method signature="loginPositiveParametersTest(java.lang.String, java.lang.String)[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:26 MEZ" name="loginPositiveParametersTest" finished-at="2022-11-01T10:26:27 MEZ" duration-ms="1445" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[kacher]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K7100596c!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPositiveParametersTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:27 MEZ" name="logOut" finished-at="2022-11-01T10:26:28 MEZ" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="stopTest(org.testng.ITestResult)[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:28 MEZ" name="stopTest" finished-at="2022-11-01T10:26:28 MEZ" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginPositiveParametersTest status=SUCCESS method=LoginTests.loginPositiveParametersTest(java.lang.String, java.lang.String)[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopTest -->
+        <test-method is-config="true" signature="init()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:28 MEZ" name="init" finished-at="2022-11-01T10:26:32 MEZ" duration-ms="4738" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="startTest(java.lang.reflect.Method)[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:32 MEZ" name="startTest" finished-at="2022-11-01T10:26:32 MEZ" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.telran.tests.bookstore.LoginTests.loginPositiveTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method is-config="true" signature="ensurePrecondition()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:32 MEZ" name="ensurePrecondition" finished-at="2022-11-01T10:26:33 MEZ" duration-ms="1029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ensurePrecondition -->
+        <test-method signature="loginPositiveTest()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:33 MEZ" name="loginPositiveTest" finished-at="2022-11-01T10:26:35 MEZ" duration-ms="1528" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPositiveTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:35 MEZ" name="logOut" finished-at="2022-11-01T10:26:35 MEZ" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="stopTest(org.testng.ITestResult)[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4]" started-at="2022-11-01T10:26:35 MEZ" name="stopTest" finished-at="2022-11-01T10:26:35 MEZ" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginPositiveTest status=SUCCESS method=LoginTests.loginPositiveTest()[pri:0, instance:com.telran.tests.bookstore.LoginTests@6fa51cd4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopTest -->
+      </class> <!-- com.telran.tests.bookstore.LoginTests -->
+    </test> <!-- User -->
+  </suite> <!-- User -->
+</testng-results>
