@@ -35,6 +35,8 @@ public class SelectMenuPage extends BasePage {
     WebElement spase;
 
     public SelectMenuPage clickOnMultiSelectDropDown(String text) {
+        hideAd();
+        hideFooter();
         click(multiSelectDropDown);
         wd.findElement(By.xpath(String.format("//div[text()='%s']", text))).click();
         pause(500);
