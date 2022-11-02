@@ -91,6 +91,8 @@ public class SelectMenuPage extends BasePage {
     WebElement selectValue;
 
     public SelectMenuPage clickOnSelectValue(String text) {
+        hideAd();
+        hideFooter();
         click(selectValue);
         wd.findElement(By.xpath(String.format("//div[text()='%s']", text))).click();
         pause(500);
