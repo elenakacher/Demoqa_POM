@@ -17,14 +17,17 @@ public class MenuPage extends BasePage {
     @FindBy(xpath = "//a[.='SUB SUB LIST »']")
     WebElement subMenu2;
 
-    @FindBy(xpath = "//a[.='Sub Sub Item 2']")
+    @FindBy(xpath = "//*[.='Sub Sub Item 2']")
     WebElement subSubMenu2;
 
     public MenuPage selectSubMenu() {
+        hideAd();
+        hideFooter();
         Actions actions = new Actions(wd);
         //mouse hover menu options 'Main Item 2'
         actions.moveToElement(menu2).perform();
         actions.moveToElement(subMenu2).perform();
+        pause(1000);
         actions.moveToElement(subSubMenu2).perform();
         click(subSubMenu2);
         return this;

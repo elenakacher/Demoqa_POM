@@ -17,7 +17,7 @@ public class MenuTests extends TestBase {
     }
 
     @Test
-    public void manuTest() {
+    public void menuTest() {
         new SidePanelPage(wd).selectMenuItem();
         new MenuPage(wd).selectSubMenu();
     }

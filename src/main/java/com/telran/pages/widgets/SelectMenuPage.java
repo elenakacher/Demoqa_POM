@@ -28,7 +28,7 @@ public class SelectMenuPage extends BasePage {
     }
 
     //(//div[@class=' css-1hwfws3'])[3]
-    @FindBy(xpath = "//div[.='Select...']")
+    @FindBy(xpath = "//*[.='Select...']")
     WebElement multiSelectDropDown;
 
     @FindBy(xpath = "//html")

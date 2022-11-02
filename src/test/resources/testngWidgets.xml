@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="WidgetsTest" verbose="1" >
+    <test name="Slider" >
+        <classes>
+            <class name="com.telran.tests.widgets.MenuTests" >
+            <methods>
+                <exclude name="menuTest"></exclude>
+            </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Select" >
+        <classes>
+            <class name="com.telran.tests.widgets.SelectTests" >
+                <methods>
+                    <exclude name=".*One.*"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
